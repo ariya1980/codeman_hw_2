@@ -1,0 +1,20 @@
+include mixin/image 
+include mixin/fullness
+include mixin/form
+include mixin/foodlist 
+
+doctype html
+html
+    head
+        title
+            block title
+        include head
+    body
+        main.container.is-fluid
+            .section
+                .columns
+                    .column
+                    .column
+                        block content
+                    .column
+               

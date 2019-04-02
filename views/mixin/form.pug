@@ -1,0 +1,11 @@
+mixin form(name)
+    #form.section
+            form(action="/pets/feed",method="POST")
+                input.is-invisible.input(name="name", value=`${name}`)/
+                .field
+                    .field
+                        .control
+                            input#food.input(name="food")/
+                    .field
+                        .control
+                            button.button.is-link.is-fullwidth feed

@@ -1,0 +1,25 @@
+extends ../layout
+
+block title 
+    = `Twitter`
+
+block content
+    h1.title Twitter of 
+
+    #list
+            .columns
+            - for (var key in tweets)
+                - for (var i = 0; i < tweets[key].length; i ++)
+                    .column
+                        a(href = `/twitter/tweets/${key}`)
+                            .card
+                                header.card-header
+                                        p.card-header-title
+                                            | message :
+                                            = tweets[key][i].tweet  
+                                            br
+                                            | time :
+                                            = tweets[key][i].createdAt 
+                                            br 
+                                            | by :
+                                            = key

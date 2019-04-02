@@ -1,0 +1,43 @@
+extends ../layout
+
+block title 
+    = `Edit Twitter`
+
+block content
+    h1.title Edit Twitter
+    #list
+        .columns
+        //- for (let i = 0; i < tweets.length; i += 1)
+        - for (var key in tweets)
+             - for (var i = 0; i < tweets[key].length; i ++)
+                .column 
+                        .card
+                            header.card-header
+                                    p.card-header-title
+                                        | message :
+                                        = tweets[key][i].tweet  
+                                        br
+                                        | time :
+                                        = tweets[key][i].createdAt 
+                                        br 
+                                        | by :
+                                        = key
+                        .column 
+                            form(action=`/twitter/tweets/${id}/${index}` method="POST") 
+                                .field
+                                    .control    
+                                        input.input(name="tweetEdit")
+                                .field
+                                    .control   
+                                        input.input(type="hidden", name="_method", value="PUT")
+                                .field
+                                    .control
+                                         button.button.is-link.is-fullwidth Save
+                        .column 
+                            form(action=`/twitter/tweets/${id}/${index}` method="POST")
+                                .field
+                                    .control   
+                                        input.input(type="hidden", name="_method", value="DELETE")
+                                .field
+                                    .control
+                                        button.button.is-link.is-fullwidth Delete              

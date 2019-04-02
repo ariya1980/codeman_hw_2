@@ -1,0 +1,14 @@
+extends ../layout
+
+block title
+    = `Twitter Clone Application - Login`
+
+block content
+    h1.title Twitter Login
+        form(action="/twitter/users/session",method="POST")
+            .field
+                .control
+                    input.input(name="username")
+            .field
+                .control
+                    button.button.is-link.is-fullwith login

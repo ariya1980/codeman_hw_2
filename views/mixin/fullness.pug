@@ -1,0 +1,14 @@
+mixin fullness(fullnessScore)
+    #fullness.has-text-centered
+        -
+            let fullnessResult = ''
+            if (fullnessScore == 0) {
+                fullnessResult = 'So hungry feed me!'
+            }else if (fullnessScore < 5){
+                fullnessResult = 'Feed me more!'
+            }else{
+                fullnessResult = 'I am full!'
+            }
+            console.log("fullnessScore : " + fullnessScore)
+        h1.title Fullness
+        h2.title= `${fullnessResult} (${fullnessScore})`

@@ -1,0 +1,42 @@
+extends ../layout
+
+block title 
+    = `Twitter`
+
+block content
+    h1.title Twitter
+        form(action="/twitter/new",method="GET")
+                .field
+                    .control
+                        button.button.is-link.is-fullwidth Tweet
+    #search-box.field  
+
+        .field                 
+            form(action="/twitter/search",method="POST")
+                .field
+                    .control    
+                        input.input(name="q")
+                .field
+                    .control
+                        button.button.is-link.is-fullwidth Search
+
+
+    #list
+        .columns
+        //- for (let i = 0; i < tweets.length; i += 1)
+        - for (var key in tweets)
+             - for (var i = 0; i < tweets[key].length; i ++)
+                .column           
+                    a(href = `/twitter/tweets/check/${key}/${i}`)
+                        .card
+                            header.card-header
+                            
+                                    p.card-header-title
+                                        | message :
+                                        = tweets[key][i].tweet  
+                                        br
+                                        | time :
+                                        = tweets[key][i].createdAt 
+                                        br 
+                                        | by :
+                                        = key

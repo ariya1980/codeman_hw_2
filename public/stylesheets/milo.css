@@ -1,0 +1,12 @@
+html, body, main{
+    margin:0;
+    height: 100%;
+}
+body{
+    background-image: url('/room.jpg');
+    background-size: auto 100vh;
+    background-position: center center;
+}
+#hero .image{
+    margin: 0 auto;
+}

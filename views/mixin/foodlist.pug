@@ -1,0 +1,6 @@
+mixin food(foodFullnesses)
+    #foodlist.has-text-centered
+        h1.title Food list
+            - const foodKeys = Object.keys(foodFullnesses)
+            - for (let i = 0; i < foodKeys.length; i += 1)
+                li= foodKeys[i]    

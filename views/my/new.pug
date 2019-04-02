@@ -1,0 +1,15 @@
+extends ../layout
+
+block title 
+    = `New Twitter`
+
+block content
+    h1.title Twitter
+    #search-box.field  
+        form(action="/twitter/tweets",method="POST")
+            .field
+                .control    
+                    input.input(name="tweetData")
+            .field
+                .control
+                    button.button.is-link.is-fullwidth Tweet
